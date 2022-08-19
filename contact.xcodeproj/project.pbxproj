@@ -8,22 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		781C45B428AC98B0002CFA42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45B328AC98B0002CFA42 /* AppDelegate.swift */; };
-		781C45B628AC98B0002CFA42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45B528AC98B0002CFA42 /* SceneDelegate.swift */; };
-		781C45B828AC98B0002CFA42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45B728AC98B0002CFA42 /* ViewController.swift */; };
-		781C45BB28AC98B0002CFA42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781C45B928AC98B0002CFA42 /* Main.storyboard */; };
 		781C45BD28AC98B1002CFA42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781C45BC28AC98B1002CFA42 /* Assets.xcassets */; };
 		781C45C028AC98B1002CFA42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781C45BE28AC98B1002CFA42 /* LaunchScreen.storyboard */; };
+		781C45CA28AC9999002CFA42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45C828AC9999002CFA42 /* HomeViewController.swift */; };
+		781C45CB28AC9999002CFA42 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45C928AC9999002CFA42 /* HomeViewController.xib */; };
+		781C45D028ACC72F002CFA42 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45CE28ACC72F002CFA42 /* DetailViewController.swift */; };
+		781C45D128ACC72F002CFA42 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45CF28ACC72F002CFA42 /* DetailViewController.xib */; };
+		781C45DB28ACED4B002CFA42 /* KeypadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45D928ACED4B002CFA42 /* KeypadViewController.swift */; };
+		781C45DC28ACED4B002CFA42 /* KeypadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45DA28ACED4B002CFA42 /* KeypadViewController.xib */; };
+		781C45DF28ACED65002CFA42 /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45DD28ACED65002CFA42 /* RecentsViewController.swift */; };
+		781C45E028ACED65002CFA42 /* RecentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45DE28ACED65002CFA42 /* RecentsViewController.xib */; };
+		781C45E528ACF342002CFA42 /* VoicemailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45E328ACF342002CFA42 /* VoicemailViewController.swift */; };
+		781C45E628ACF342002CFA42 /* VoicemailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45E428ACF342002CFA42 /* VoicemailViewController.xib */; };
+		781C45E928ACF350002CFA42 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45E728ACF350002CFA42 /* FavoritesViewController.swift */; };
+		781C45EA28ACF350002CFA42 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45E828ACF350002CFA42 /* FavoritesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		781C45B028AC98B0002CFA42 /* contact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		781C45B328AC98B0002CFA42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		781C45B528AC98B0002CFA42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		781C45B728AC98B0002CFA42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		781C45BA28AC98B0002CFA42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		781C45BC28AC98B1002CFA42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		781C45BF28AC98B1002CFA42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		781C45C128AC98B1002CFA42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		781C45C828AC9999002CFA42 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		781C45C928AC9999002CFA42 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		781C45CE28ACC72F002CFA42 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		781C45CF28ACC72F002CFA42 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		781C45D928ACED4B002CFA42 /* KeypadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadViewController.swift; sourceTree = "<group>"; };
+		781C45DA28ACED4B002CFA42 /* KeypadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeypadViewController.xib; sourceTree = "<group>"; };
+		781C45DD28ACED65002CFA42 /* RecentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
+		781C45DE28ACED65002CFA42 /* RecentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentsViewController.xib; sourceTree = "<group>"; };
+		781C45E328ACF342002CFA42 /* VoicemailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicemailViewController.swift; sourceTree = "<group>"; };
+		781C45E428ACF342002CFA42 /* VoicemailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoicemailViewController.xib; sourceTree = "<group>"; };
+		781C45E728ACF350002CFA42 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		781C45E828ACF350002CFA42 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,80 @@
 		781C45B228AC98B0002CFA42 /* contact */ = {
 			isa = PBXGroup;
 			children = (
+				781C45CC28ACC6FE002CFA42 /* Controller */,
 				781C45B328AC98B0002CFA42 /* AppDelegate.swift */,
-				781C45B528AC98B0002CFA42 /* SceneDelegate.swift */,
-				781C45B728AC98B0002CFA42 /* ViewController.swift */,
-				781C45B928AC98B0002CFA42 /* Main.storyboard */,
 				781C45BC28AC98B1002CFA42 /* Assets.xcassets */,
 				781C45BE28AC98B1002CFA42 /* LaunchScreen.storyboard */,
 				781C45C128AC98B1002CFA42 /* Info.plist */,
 			);
 			path = contact;
+			sourceTree = "<group>";
+		};
+		781C45C728AC996D002CFA42 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				781C45C828AC9999002CFA42 /* HomeViewController.swift */,
+				781C45C928AC9999002CFA42 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		781C45CC28ACC6FE002CFA42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				781C45E228ACF333002CFA42 /* Voicemail */,
+				781C45D828ACED34002CFA42 /* Keypad */,
+				781C45E128ACF31A002CFA42 /* Favorites */,
+				781C45D728ACED2A002CFA42 /* Recents */,
+				781C45C728AC996D002CFA42 /* Home */,
+				781C45CD28ACC70D002CFA42 /* Detail */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		781C45CD28ACC70D002CFA42 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				781C45CE28ACC72F002CFA42 /* DetailViewController.swift */,
+				781C45CF28ACC72F002CFA42 /* DetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		781C45D728ACED2A002CFA42 /* Recents */ = {
+			isa = PBXGroup;
+			children = (
+				781C45DD28ACED65002CFA42 /* RecentsViewController.swift */,
+				781C45DE28ACED65002CFA42 /* RecentsViewController.xib */,
+			);
+			path = Recents;
+			sourceTree = "<group>";
+		};
+		781C45D828ACED34002CFA42 /* Keypad */ = {
+			isa = PBXGroup;
+			children = (
+				781C45D928ACED4B002CFA42 /* KeypadViewController.swift */,
+				781C45DA28ACED4B002CFA42 /* KeypadViewController.xib */,
+			);
+			path = Keypad;
+			sourceTree = "<group>";
+		};
+		781C45E128ACF31A002CFA42 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				781C45E728ACF350002CFA42 /* FavoritesViewController.swift */,
+				781C45E828ACF350002CFA42 /* FavoritesViewController.xib */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		781C45E228ACF333002CFA42 /* Voicemail */ = {
+			isa = PBXGroup;
+			children = (
+				781C45E328ACF342002CFA42 /* VoicemailViewController.swift */,
+				781C45E428ACF342002CFA42 /* VoicemailViewController.xib */,
+			);
+			path = Voicemail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +208,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781C45E628ACF342002CFA42 /* VoicemailViewController.xib in Resources */,
 				781C45C028AC98B1002CFA42 /* LaunchScreen.storyboard in Resources */,
 				781C45BD28AC98B1002CFA42 /* Assets.xcassets in Resources */,
-				781C45BB28AC98B0002CFA42 /* Main.storyboard in Resources */,
+				781C45CB28AC9999002CFA42 /* HomeViewController.xib in Resources */,
+				781C45E028ACED65002CFA42 /* RecentsViewController.xib in Resources */,
+				781C45D128ACC72F002CFA42 /* DetailViewController.xib in Resources */,
+				781C45EA28ACF350002CFA42 /* FavoritesViewController.xib in Resources */,
+				781C45DC28ACED4B002CFA42 /* KeypadViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +226,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				781C45B828AC98B0002CFA42 /* ViewController.swift in Sources */,
+				781C45E528ACF342002CFA42 /* VoicemailViewController.swift in Sources */,
+				781C45DF28ACED65002CFA42 /* RecentsViewController.swift in Sources */,
+				781C45E928ACF350002CFA42 /* FavoritesViewController.swift in Sources */,
+				781C45D028ACC72F002CFA42 /* DetailViewController.swift in Sources */,
 				781C45B428AC98B0002CFA42 /* AppDelegate.swift in Sources */,
-				781C45B628AC98B0002CFA42 /* SceneDelegate.swift in Sources */,
+				781C45DB28ACED4B002CFA42 /* KeypadViewController.swift in Sources */,
+				781C45CA28AC9999002CFA42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		781C45B928AC98B0002CFA42 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				781C45BA28AC98B0002CFA42 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		781C45BE28AC98B1002CFA42 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +378,6 @@
 				INFOPLIST_FILE = contact/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +405,6 @@
 				INFOPLIST_FILE = contact/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

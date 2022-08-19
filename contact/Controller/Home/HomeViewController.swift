@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    
     @IBOutlet weak var tableview: UITableView!
     var titles: [String] = ["iOS", "Android"]
     
@@ -20,6 +21,7 @@ class HomeViewController: UIViewController {
     var nameSectionTitles = [String]()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         for name in names {
             let nameKey = String(name.prefix(1))
             if var nameValue = namesDic[nameKey] {
@@ -30,11 +32,18 @@ class HomeViewController: UIViewController {
             }
         }
         
+        let button = UIBarButtonItem(title: "Sua", style: .plain, target: self, action: nil)
+//        let button2 = UIBarButtonItem(title: "hehe", style: .done, target: self, action: nil)
+        let button2 = UIBarButtonItem(image: UIImage(named: "rectangle.stack.fill.badge.plus") ,style: .done, target: self, action: nil)
+
+        self.navigationItem.rightBarButtonItem = button
+        self.navigationItem.leftBarButtonItem = button2
+        
+        
         nameSectionTitles = [String](namesDic.keys)
         nameSectionTitles = nameSectionTitles.sorted(by: {$0 < $1})
         
-        super.viewDidLoad()
-        title = "Home"
+        title = "Contacts"
         // Do any additional setup after loading the view.
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableview.delegate = self

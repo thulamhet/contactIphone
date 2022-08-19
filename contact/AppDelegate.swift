@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //tabbar controller
         let tabbarController = UITabBarController()
         tabbarController.viewControllers = [favoritesNavi, recentsNavi, homeNavi, keypadNavi, voicemailNavi]
-        
+        tabbarController.selectedIndex = 2
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
         return true
