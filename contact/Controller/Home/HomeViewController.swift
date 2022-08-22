@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Contacts
 
 class HomeViewController: UIViewController {
 
@@ -19,6 +20,26 @@ class HomeViewController: UIViewController {
         ]
     var namesDic = [String: [String]]()
     var nameSectionTitles = [String]()
+    
+    func fetchAllContacts () {
+        // Get access to the contacts store
+        let store = CNContactStore()
+        //Specify which data keys want to fetch
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        
+        //Create fetch request
+        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
+        
+        //Call the method to fetch all contacts
+        do {
+            try store.enumerateContacts(with: fetchRequest, usingBlock: {contact,
+                result in
+                print(contact.givenName)
+            })
+        } catch {
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
