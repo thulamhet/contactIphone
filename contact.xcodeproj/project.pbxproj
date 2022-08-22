@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7810388928B33BB600702E40 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810388728B33BB600702E40 /* HomeCell.swift */; };
+		7810388A28B33BB600702E40 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7810388828B33BB600702E40 /* HomeCell.xib */; };
 		781C45B428AC98B0002CFA42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45B328AC98B0002CFA42 /* AppDelegate.swift */; };
 		781C45BD28AC98B1002CFA42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 781C45BC28AC98B1002CFA42 /* Assets.xcassets */; };
 		781C45C028AC98B1002CFA42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781C45BE28AC98B1002CFA42 /* LaunchScreen.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7810388728B33BB600702E40 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		7810388828B33BB600702E40 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		781C45B028AC98B0002CFA42 /* contact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		781C45B328AC98B0002CFA42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		781C45BC28AC98B1002CFA42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7810388228B339FA00702E40 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				7810388728B33BB600702E40 /* HomeCell.swift */,
+				7810388828B33BB600702E40 /* HomeCell.xib */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
 		781C45A728AC98B0002CFA42 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 		781C45C728AC996D002CFA42 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7810388228B339FA00702E40 /* HomeCell */,
 				781C45C828AC9999002CFA42 /* HomeViewController.swift */,
 				781C45C928AC9999002CFA42 /* HomeViewController.xib */,
 			);
@@ -209,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				781C45E628ACF342002CFA42 /* VoicemailViewController.xib in Resources */,
+				7810388A28B33BB600702E40 /* HomeCell.xib in Resources */,
 				781C45C028AC98B1002CFA42 /* LaunchScreen.storyboard in Resources */,
 				781C45BD28AC98B1002CFA42 /* Assets.xcassets in Resources */,
 				781C45CB28AC9999002CFA42 /* HomeViewController.xib in Resources */,
@@ -228,6 +243,7 @@
 			files = (
 				781C45E528ACF342002CFA42 /* VoicemailViewController.swift in Sources */,
 				781C45DF28ACED65002CFA42 /* RecentsViewController.swift in Sources */,
+				7810388928B33BB600702E40 /* HomeCell.swift in Sources */,
 				781C45E928ACF350002CFA42 /* FavoritesViewController.swift in Sources */,
 				781C45D028ACC72F002CFA42 /* DetailViewController.swift in Sources */,
 				781C45B428AC98B0002CFA42 /* AppDelegate.swift in Sources */,

@@ -9,24 +9,16 @@ import UIKit
 import Contacts
 
 class HomeViewController: UIViewController {
-
-    
     @IBOutlet weak var tableview: UITableView!
-    var titles: [String] = ["iOS", "Android"]
     
-    var names: [String] =
-        [
-            "Bình", "Khánh", "Toàn", "Tâm", "An", "Hương", "Huy", "Quang", "Vân", "Đài", "Tiến"
-        ]
-    var namesDic = [String: [String]]()
+    var names: [NSMutableAttributedString] = []
+    var namesDic = [String: [NSMutableAttributedString]]()
     var nameSectionTitles = [String]()
     
-    func fetchSpecificContact () async {
+    func fetchSpecificContact () {
         let store = CNContactStore()
-        
         let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
-        
-        let predicate = CNContact.predicateForContacts(matchingName: "Kate")
+        let predicate = CNContact.predicateForContacts(matchingName: "Haro")
         do {
             let contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
             print(contacts)
@@ -34,33 +26,49 @@ class HomeViewController: UIViewController {
             print("Error: \(error)")
         }
     }
- 
+
     
-    func fetchAllContacts() async {
-        // Get access to the contacts store
-        let store = CNContactStore()
-        //Specify which data keys want to fetch
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+    func fetchAllContacts() {
         
-        //Create fetch request
+        let boldText = "Filter:"
+        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)]
+        let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
+
+        let normalText = "Hi am normal"
+        let normalString = NSMutableAttributedString(string:normalText)
+        attributedString.append(normalString)
+        
+        
+    
+        let store = CNContactStore()
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactNicknameKey, CNContactFamilyNameKey, CNContactDepartmentNameKey, CNContactMiddleNameKey, CNContactNamePrefixKey, CNContactNameSuffixKey] as [CNKeyDescriptor]
+        
         let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
         
-        //Call the method to fetch all contacts
         do {
             try store.enumerateContacts(with: fetchRequest, usingBlock: {contact,
                 result in
-                print(contact.givenName)
                 
-                for number in contact.phoneNumbers {
-                    switch number.label {
-                    case CNLabelPhoneNumberMobile:
-                        print("- Mobile: \(number.value.stringValue)")
-                    case CNLabelPhoneNumberMain:
-                        print("- Main: \(number.value.stringValue)")
-                    default:
-                        print("- Other: \(number.value.stringValue)")
+                let boldText1 = contact.familyName
+                let attrs1 = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)]
+                let attributedString = NSMutableAttributedString(string:boldText1, attributes:attrs1)
+                
+                let normalText1 = contact.namePrefix + " " + contact.givenName + " " + contact.middleName + " "
+                let normalText2 = " " + contact.nameSuffix
+                let normalString1 = NSMutableAttributedString(string:normalText1)
+                let normalString2 = NSMutableAttributedString(string:normalText2)
+                normalString1.append(attributedString)
+                normalString1.append(normalString2)
+                
+                self.names.append(normalString1)
+                let nameKey = String(contact.familyName.prefix(1))
+                    if var nameValue = self.namesDic[nameKey] {
+                        nameValue.append(normalString1)
+                        self.namesDic[nameKey] = nameValue
+                    } else {
+                        self.namesDic[nameKey] = [normalString1]
                     }
-                }
+                
             })
         } catch {
             
@@ -69,38 +77,26 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Task.init {
-            await fetchSpecificContact()
-        }
-        for name in names {
-            let nameKey = String(name.prefix(1))
-            if var nameValue = namesDic[nameKey] {
-                nameValue.append(name)
-                namesDic[nameKey] = nameValue
-            } else {
-                namesDic[nameKey] = [name]
-            }
-        }
+        fetchAllContacts()
         
-        let button = UIBarButtonItem(title: "Sua", style: .plain, target: self, action: nil)
-//        let button2 = UIBarButtonItem(title: "hehe", style: .done, target: self, action: nil)
-        let button2 = UIBarButtonItem(image: UIImage(named: "rectangle.stack.fill.badge.plus") ,style: .done, target: self, action: nil)
+        let button = UIBarButtonItem(title: "ss", style: .plain, target: self, action: nil)
+    
+        let button2 = UIBarButtonItem(title: "Groups", style: .done, target: self, action: nil)
 
         self.navigationItem.rightBarButtonItem = button
         self.navigationItem.leftBarButtonItem = button2
-        
         
         nameSectionTitles = [String](namesDic.keys)
         nameSectionTitles = nameSectionTitles.sorted(by: {$0 < $1})
         
         title = "Contacts"
-        // Do any additional setup after loading the view.
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableview.delegate = self
         tableview.dataSource = self
+        let nib = UINib(nibName: "HomeCell", bundle: .main)
+        tableview.register(nib, forCellReuseIdentifier: "cell")
     }
 }
-
 
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
@@ -118,25 +114,27 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeCell
         let nameKey = nameSectionTitles[indexPath.section]
             if let nameValue = namesDic[nameKey] {
-                cell.textLabel?.text = nameValue[indexPath.row]
+                cell.nameLabel?.attributedText = nameValue[indexPath.row]
             }
-
-//        let label = UILabel(frame: CGRect(x: 20, y: 30, width: 100, height: 20))
-//        label.text = "sub title"
-//        label.textColor = .red
-//        cell.addSubview(label)
-        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected cell: \( names[indexPath.row])")
-        let vc = DetailViewController()
-        vc.name = names[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        let nameKey = nameSectionTitles[indexPath.section]
+        if let nameValue = namesDic[nameKey] {
+            let vc = DetailViewController(  )
+            vc.name = nameValue[indexPath.row].string
+            self.navigationController?.pushViewController(vc, animated: true)
+            print(nameValue[indexPath.row])
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
