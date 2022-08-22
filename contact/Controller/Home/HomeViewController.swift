@@ -21,7 +21,22 @@ class HomeViewController: UIViewController {
     var namesDic = [String: [String]]()
     var nameSectionTitles = [String]()
     
-    func fetchAllContacts () {
+    func fetchSpecificContact () async {
+        let store = CNContactStore()
+        
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        
+        let predicate = CNContact.predicateForContacts(matchingName: "Kate")
+        do {
+            let contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
+            print(contacts)
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+ 
+    
+    func fetchAllContacts() async {
         // Get access to the contacts store
         let store = CNContactStore()
         //Specify which data keys want to fetch
@@ -35,6 +50,17 @@ class HomeViewController: UIViewController {
             try store.enumerateContacts(with: fetchRequest, usingBlock: {contact,
                 result in
                 print(contact.givenName)
+                
+                for number in contact.phoneNumbers {
+                    switch number.label {
+                    case CNLabelPhoneNumberMobile:
+                        print("- Mobile: \(number.value.stringValue)")
+                    case CNLabelPhoneNumberMain:
+                        print("- Main: \(number.value.stringValue)")
+                    default:
+                        print("- Other: \(number.value.stringValue)")
+                    }
+                }
             })
         } catch {
             
@@ -43,6 +69,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Task.init {
+            await fetchSpecificContact()
+        }
         for name in names {
             let nameKey = String(name.prefix(1))
             if var nameValue = namesDic[nameKey] {
