@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780205B928B487030087C152 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 780205B828B487030087C152 /* DetailViewController.xib */; };
+		780205BD28B5D2500087C152 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780205BB28B5D2500087C152 /* DetailCell.swift */; };
+		780205BE28B5D2500087C152 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 780205BC28B5D2500087C152 /* DetailCell.xib */; };
 		7810388928B33BB600702E40 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810388728B33BB600702E40 /* HomeCell.swift */; };
 		7810388A28B33BB600702E40 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7810388828B33BB600702E40 /* HomeCell.xib */; };
 		781C45B428AC98B0002CFA42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45B328AC98B0002CFA42 /* AppDelegate.swift */; };
@@ -15,7 +18,6 @@
 		781C45CA28AC9999002CFA42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45C828AC9999002CFA42 /* HomeViewController.swift */; };
 		781C45CB28AC9999002CFA42 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45C928AC9999002CFA42 /* HomeViewController.xib */; };
 		781C45D028ACC72F002CFA42 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45CE28ACC72F002CFA42 /* DetailViewController.swift */; };
-		781C45D128ACC72F002CFA42 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45CF28ACC72F002CFA42 /* DetailViewController.xib */; };
 		781C45DB28ACED4B002CFA42 /* KeypadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45D928ACED4B002CFA42 /* KeypadViewController.swift */; };
 		781C45DC28ACED4B002CFA42 /* KeypadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45DA28ACED4B002CFA42 /* KeypadViewController.xib */; };
 		781C45DF28ACED65002CFA42 /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45DD28ACED65002CFA42 /* RecentsViewController.swift */; };
@@ -24,9 +26,14 @@
 		781C45E628ACF342002CFA42 /* VoicemailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45E428ACF342002CFA42 /* VoicemailViewController.xib */; };
 		781C45E928ACF350002CFA42 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C45E728ACF350002CFA42 /* FavoritesViewController.swift */; };
 		781C45EA28ACF350002CFA42 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45E828ACF350002CFA42 /* FavoritesViewController.xib */; };
+		781F1B2C28B47A8B00788107 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F1B2B28B47A8B00788107 /* NavigationView.swift */; };
+		781F1B2E28B47AA800788107 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781F1B2D28B47AA800788107 /* NavigationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		780205B828B487030087C152 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		780205BB28B5D2500087C152 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		780205BC28B5D2500087C152 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		7810388728B33BB600702E40 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7810388828B33BB600702E40 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		781C45B028AC98B0002CFA42 /* contact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contact.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +44,6 @@
 		781C45C828AC9999002CFA42 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		781C45C928AC9999002CFA42 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		781C45CE28ACC72F002CFA42 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		781C45CF28ACC72F002CFA42 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		781C45D928ACED4B002CFA42 /* KeypadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadViewController.swift; sourceTree = "<group>"; };
 		781C45DA28ACED4B002CFA42 /* KeypadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeypadViewController.xib; sourceTree = "<group>"; };
 		781C45DD28ACED65002CFA42 /* RecentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +52,8 @@
 		781C45E428ACF342002CFA42 /* VoicemailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoicemailViewController.xib; sourceTree = "<group>"; };
 		781C45E728ACF350002CFA42 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		781C45E828ACF350002CFA42 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		781F1B2B28B47A8B00788107 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		781F1B2D28B47AA800788107 /* NavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		780205BA28B5D2350087C152 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				780205BB28B5D2500087C152 /* DetailCell.swift */,
+				780205BC28B5D2500087C152 /* DetailCell.xib */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
 		7810388228B339FA00702E40 /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +126,7 @@
 		781C45CC28ACC6FE002CFA42 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				781F1B2A28B47A3100788107 /* Navigation Bar */,
 				781C45E228ACF333002CFA42 /* Voicemail */,
 				781C45D828ACED34002CFA42 /* Keypad */,
 				781C45E128ACF31A002CFA42 /* Favorites */,
@@ -122,8 +140,9 @@
 		781C45CD28ACC70D002CFA42 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				780205BA28B5D2350087C152 /* DetailCell */,
 				781C45CE28ACC72F002CFA42 /* DetailViewController.swift */,
-				781C45CF28ACC72F002CFA42 /* DetailViewController.xib */,
+				780205B828B487030087C152 /* DetailViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -162,6 +181,15 @@
 				781C45E428ACF342002CFA42 /* VoicemailViewController.xib */,
 			);
 			path = Voicemail;
+			sourceTree = "<group>";
+		};
+		781F1B2A28B47A3100788107 /* Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				781F1B2B28B47A8B00788107 /* NavigationView.swift */,
+				781F1B2D28B47AA800788107 /* NavigationView.xib */,
+			);
+			path = "Navigation Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,13 +250,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780205BE28B5D2500087C152 /* DetailCell.xib in Resources */,
 				781C45E628ACF342002CFA42 /* VoicemailViewController.xib in Resources */,
 				7810388A28B33BB600702E40 /* HomeCell.xib in Resources */,
 				781C45C028AC98B1002CFA42 /* LaunchScreen.storyboard in Resources */,
 				781C45BD28AC98B1002CFA42 /* Assets.xcassets in Resources */,
 				781C45CB28AC9999002CFA42 /* HomeViewController.xib in Resources */,
 				781C45E028ACED65002CFA42 /* RecentsViewController.xib in Resources */,
-				781C45D128ACC72F002CFA42 /* DetailViewController.xib in Resources */,
+				781F1B2E28B47AA800788107 /* NavigationView.xib in Resources */,
+				780205B928B487030087C152 /* DetailViewController.xib in Resources */,
 				781C45EA28ACF350002CFA42 /* FavoritesViewController.xib in Resources */,
 				781C45DC28ACED4B002CFA42 /* KeypadViewController.xib in Resources */,
 			);
@@ -241,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780205BD28B5D2500087C152 /* DetailCell.swift in Sources */,
 				781C45E528ACF342002CFA42 /* VoicemailViewController.swift in Sources */,
+				781F1B2C28B47A8B00788107 /* NavigationView.swift in Sources */,
 				781C45DF28ACED65002CFA42 /* RecentsViewController.swift in Sources */,
 				7810388928B33BB600702E40 /* HomeCell.swift in Sources */,
 				781C45E928ACF350002CFA42 /* FavoritesViewController.swift in Sources */,
