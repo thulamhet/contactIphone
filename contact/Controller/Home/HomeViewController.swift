@@ -5,9 +5,10 @@ struct Person {
     var id: String
     var name: String
     var contact: CNContact?
-    var tel: [String]?
-    var number: String?
-    var emailAddress: String?
+    var tel: [String]
+    var number: [String]
+    var emailAddress: (value: String?, label: String?)
+    var birthday: String
 }
 
 class HomeViewController: UIViewController {
@@ -33,7 +34,7 @@ class HomeViewController: UIViewController {
     
     func fetchAllContacts() {
         let store = CNContactStore()
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactNicknameKey, CNContactFamilyNameKey, CNContactDepartmentNameKey, CNContactMiddleNameKey, CNContactNamePrefixKey, CNContactNameSuffixKey, CNContactEmailAddressesKey, CNContactJobTitleKey] as [CNKeyDescriptor]
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactNicknameKey, CNContactFamilyNameKey, CNContactDepartmentNameKey, CNContactMiddleNameKey, CNContactNamePrefixKey, CNContactNameSuffixKey, CNContactEmailAddressesKey, CNContactJobTitleKey, CNContactBirthdayKey, CNContactUrlAddressesKey, CNContactBirthdayKey] as [CNKeyDescriptor]
         
         let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
         
@@ -57,18 +58,54 @@ class HomeViewController: UIViewController {
                 } else {
                     self.namesDic[nameKey] = [normalString1]
                 }
-                var model = Person(id: contact.identifier, name: normalString1.string, contact: contact, tel: [], number: nil, emailAddress: nil)
+                var model = Person(id: contact.identifier, name: normalString1.string, contact: contact, tel: [], number: [], emailAddress: ("", ""), birthday: "")
                 for phoneNumber in contact.phoneNumbers {
                     if let number = phoneNumber.value as? CNPhoneNumber, let label = phoneNumber.label {
                         let localizedLabel = CNLabeledValue<CNPhoneNumber>.localizedString(forLabel: label)
-                        print("\(contact.givenName) \(contact.familyName) tel:\(localizedLabel) -- \(number.stringValue), email: \(contact.emailAddresses)")
+//                        print("\(contact.givenName) \(contact.familyName) tel:\(localizedLabel) -- \(number.stringValue), email: \(contact.emailAddresses)")
                         for mail in contact.emailAddresses {
-                            model.emailAddress = mail.value as String
+                            model.emailAddress.value = mail.value as String
+                            model.emailAddress.label = (mail.label)! as String 
                         }
-                        model.tel?.append(localizedLabel)
-                        model.number = number.stringValue
+                        model.tel.append(localizedLabel)
+                        model.number.append(number.stringValue)
                     }
                 }
+                if let month = contact.birthday?.month, let date = contact.birthday?.day, let year = contact.birthday?.year {
+                    var _month = ""
+                    switch month {
+                    case 1:
+                        _month = "January"
+                    case 2:
+                        _month = "February"
+                    case 3:
+                        _month = "March"
+                    case 4:
+                        _month = "April"
+                    case 5:
+                        _month = "May"
+                    case 6:
+                        _month = "June"
+                    case 7:
+                        _month = "July"
+                    case 8:
+                        _month = "August"
+                    case 9:
+                        _month = "September"
+                    case 10:
+                        _month = "October"
+                    case 11:
+                        _month = "November"
+                    default:
+                        _month = "December"
+
+                    }
+                    model.birthday += (_month + " " + String(date) + "," +  String(year))
+                }
+//                model.birthday.append(contact.birthday?.month)
+//                print(contact.birthday?.year)
+                print(type(of: contact.birthday?.month))
+                print(model.birthday)
                 self.models.append(model)
             })
         } catch  {
