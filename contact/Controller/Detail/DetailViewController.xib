@@ -17,7 +17,6 @@
                 <outlet property="birthdayTitle" destination="nCa-Dt-M3U" id="8Pi-L8-au3"/>
                 <outlet property="birthdayView" destination="nCa-Dt-M3U" id="rO3-tE-Qgs"/>
                 <outlet property="callView" destination="X2g-h4-3C2" id="RtL-sn-sQ1"/>
-                <outlet property="editButton" destination="plh-ro-atQ" id="bU8-he-Olg"/>
                 <outlet property="emailLabel" destination="UE6-dU-P0u" id="V5f-Ap-NHW"/>
                 <outlet property="emailTitle" destination="dcM-tH-AhF" id="aDk-tF-h5Y"/>
                 <outlet property="emailView" destination="HeW-5h-65A" id="0HK-n9-AM9"/>
@@ -138,20 +137,11 @@
                                 <constraint firstAttribute="height" constant="60" id="wQl-hi-Nnv"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plh-ro-atQ">
-                            <rect key="frame" x="367" y="60" width="29.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" name="AccentColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
                         <constraint firstItem="X2g-h4-3C2" firstAttribute="leading" secondItem="DcE-7N-WNn" secondAttribute="trailing" constant="10" id="5Kd-rL-9Vk"/>
                         <constraint firstItem="LIb-km-n58" firstAttribute="centerY" secondItem="9Fg-mq-gxa" secondAttribute="centerY" id="85I-4w-4FC"/>
-                        <constraint firstItem="4ra-sd-bfv" firstAttribute="top" secondItem="rxQ-oF-qC8" secondAttribute="top" constant="90" id="9kb-mq-xSI"/>
-                        <constraint firstAttribute="trailing" secondItem="plh-ro-atQ" secondAttribute="trailing" constant="17.5" id="BlR-6u-Oo1"/>
-                        <constraint firstItem="plh-ro-atQ" firstAttribute="top" secondItem="rxQ-oF-qC8" secondAttribute="top" constant="60" id="DUz-0I-Ve9"/>
                         <constraint firstItem="vs9-cA-fr7" firstAttribute="centerY" secondItem="X2g-h4-3C2" secondAttribute="centerY" id="IsW-lM-Dhz"/>
                         <constraint firstAttribute="bottom" secondItem="DcE-7N-WNn" secondAttribute="bottom" constant="9" id="JOO-7i-JIo"/>
                         <constraint firstItem="dwK-mc-GGT" firstAttribute="top" secondItem="4ra-sd-bfv" secondAttribute="bottom" constant="9" id="KDK-aT-13g"/>
@@ -159,8 +149,6 @@
                         <constraint firstAttribute="bottom" secondItem="X2g-h4-3C2" secondAttribute="bottom" constant="9" id="ORl-zU-uDU"/>
                         <constraint firstAttribute="height" constant="320" id="Qh5-cC-8bE"/>
                         <constraint firstItem="COB-YY-z0Y" firstAttribute="centerY" secondItem="TTJ-yi-c47" secondAttribute="centerY" id="VmX-eb-Ycm"/>
-                        <constraint firstItem="4ra-sd-bfv" firstAttribute="centerX" secondItem="rxQ-oF-qC8" secondAttribute="centerX" id="cIN-uK-1O9"/>
-                        <constraint firstItem="4ra-sd-bfv" firstAttribute="centerX" secondItem="rxQ-oF-qC8" secondAttribute="centerX" id="dSB-gc-T9q"/>
                         <constraint firstItem="X2g-h4-3C2" firstAttribute="leading" secondItem="DcE-7N-WNn" secondAttribute="trailing" constant="10" id="dfB-Ya-AHk"/>
                         <constraint firstItem="X2g-h4-3C2" firstAttribute="centerY" secondItem="DcE-7N-WNn" secondAttribute="centerY" id="e79-xJ-cpO"/>
                         <constraint firstItem="4ra-sd-bfv" firstAttribute="centerX" secondItem="rxQ-oF-qC8" secondAttribute="centerX" id="gK5-c9-9Qx"/>

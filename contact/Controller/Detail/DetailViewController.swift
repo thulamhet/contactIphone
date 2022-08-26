@@ -63,11 +63,21 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    @objc func tappedEditButton (sender: UIButton!) {
+        print("tapped button")
+        let vc = EditViewController()
+        vc.person = person
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
-        print("personeeenene, \(person.tel[0])")
-        print(type(of: person.tel))
+        let action = #selector(DetailViewController.tappedEditButton)
+        let editButton = UIBarButtonItem(title: "Edit", style: .done, target: self, action: action)
+        self.navigationItem.rightBarButtonItem = editButton
+        
+        
         let trimmed = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
         let nib = UINib(nibName: "DetailCell", bundle: .main)
         tableview.register(nib, forCellReuseIdentifier: "cell")
@@ -89,6 +99,7 @@ class DetailViewController: UIViewController {
         aView.layer.cornerRadius = 8
         addEmerView.layer.cornerRadius = 8
         shareLoView.layer.cornerRadius = 8
+//        tableview.tableHeaderView = imageV
         if person.emailAddress.value != "" || person.emailAddress.label != "" {
             emailTitle.text = "home"
             emailLabel.text = person.emailAddress.value
@@ -200,14 +211,12 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DetailViewController: UIScrollViewDelegate {
-    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-        print("123456789")
-    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = 200 - (scrollView.contentOffset.y + 200)
         let h = max(60, y)
-        print(y)
-        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: h)
-        editButton.frame = rect
+//        print(y)
+        let rect = CGRect(x: 5, y: 5, width: view.bounds.width, height: h)
+        imageV.frame = rect
+        print(imageV.frame)
     }
 }

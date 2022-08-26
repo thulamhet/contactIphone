@@ -28,6 +28,8 @@
 		781C45EA28ACF350002CFA42 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781C45E828ACF350002CFA42 /* FavoritesViewController.xib */; };
 		781F1B2C28B47A8B00788107 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F1B2B28B47A8B00788107 /* NavigationView.swift */; };
 		781F1B2E28B47AA800788107 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781F1B2D28B47AA800788107 /* NavigationView.xib */; };
+		78B0112F28B878AB009D5553 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0112D28B878AB009D5553 /* EditViewController.swift */; };
+		78B0113028B878AB009D5553 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B0112E28B878AB009D5553 /* EditViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		781C45E828ACF350002CFA42 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		781F1B2B28B47A8B00788107 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		781F1B2D28B47AA800788107 /* NavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		78B0112D28B878AB009D5553 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		78B0112E28B878AB009D5553 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		781C45CD28ACC70D002CFA42 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				78B0112C28B8787B009D5553 /* Edit */,
 				780205BA28B5D2350087C152 /* DetailCell */,
 				781C45CE28ACC72F002CFA42 /* DetailViewController.swift */,
 				780205B828B487030087C152 /* DetailViewController.xib */,
@@ -190,6 +195,15 @@
 				781F1B2D28B47AA800788107 /* NavigationView.xib */,
 			);
 			path = "Navigation Bar";
+			sourceTree = "<group>";
+		};
+		78B0112C28B8787B009D5553 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				78B0112D28B878AB009D5553 /* EditViewController.swift */,
+				78B0112E28B878AB009D5553 /* EditViewController.xib */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B0113028B878AB009D5553 /* EditViewController.xib in Resources */,
 				780205BE28B5D2500087C152 /* DetailCell.xib in Resources */,
 				781C45E628ACF342002CFA42 /* VoicemailViewController.xib in Resources */,
 				7810388A28B33BB600702E40 /* HomeCell.xib in Resources */,
@@ -280,6 +295,7 @@
 				781C45D028ACC72F002CFA42 /* DetailViewController.swift in Sources */,
 				781C45B428AC98B0002CFA42 /* AppDelegate.swift in Sources */,
 				781C45DB28ACED4B002CFA42 /* KeypadViewController.swift in Sources */,
+				78B0112F28B878AB009D5553 /* EditViewController.swift in Sources */,
 				781C45CA28AC9999002CFA42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

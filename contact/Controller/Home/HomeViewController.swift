@@ -185,7 +185,6 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         if let nameValue = namesDic[nameKey] {
             cell.nameLabel?.attributedText = nameValue[indexPath.row]
         }
-        //        if selectedIndex == indexPath { cell.backgroundColor = UIColor.black }
         return cell
     }
     
