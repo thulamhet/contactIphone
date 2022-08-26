@@ -3,7 +3,6 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet weak var imageV: UIImageView!
     @IBOutlet weak var navigationView: UIView!
-//    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var editButton: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageView: UIView!
@@ -11,6 +10,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mailView: UIView!
     @IBOutlet weak var tableview: UITableView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var emailView: UIView!
@@ -58,12 +58,14 @@ class DetailViewController: UIViewController {
         }
         return nil
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.delegate = self
         print("personeeenene, \(person.tel[0])")
         print(type(of: person.tel))
         let trimmed = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -75,8 +77,6 @@ class DetailViewController: UIViewController {
         imageV.image = imageWith(name: trimmed)
         imageV.setRounded()
         self.navigationItem.hidesSearchBarWhenScrolling = true
-        //        self.navigationController?.isNavigationBarHidden = true
-//        backButton.addTarget(self, action: #selector(onTapBackButton), for: .touchUpInside)
         tableview.layer.cornerRadius = 8
         messageView.layer.cornerRadius = 8
         callView.layer.cornerRadius = 8
@@ -90,7 +90,7 @@ class DetailViewController: UIViewController {
         addEmerView.layer.cornerRadius = 8
         shareLoView.layer.cornerRadius = 8
         if person.emailAddress.value != "" || person.emailAddress.label != "" {
-            emailTitle.text = person.emailAddress.label
+            emailTitle.text = "home"
             emailLabel.text = person.emailAddress.value
         } else {
             emailView.isHidden = true
@@ -166,6 +166,7 @@ extension UIImageView {
     }
 }
 
+
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -188,5 +189,25 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
+    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let y = 200 - (scrollView.contentOffset.y + 200)
+//        let h = max(60, y)
+//        print(y)
+//        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: h)
+//        editButton.frame = rect
+//    }
+}
+
+extension DetailViewController: UIScrollViewDelegate {
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        print("123456789")
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = 200 - (scrollView.contentOffset.y + 200)
+        let h = max(60, y)
+        print(y)
+        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: h)
+        editButton.frame = rect
     }
 }

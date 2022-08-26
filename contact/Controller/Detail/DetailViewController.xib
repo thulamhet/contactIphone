@@ -28,6 +28,7 @@
                 <outlet property="navigationView" destination="rxQ-oF-qC8" id="sqC-LX-bV4"/>
                 <outlet property="noteView" destination="kPA-iK-rqD" id="Unp-KK-mXW"/>
                 <outlet property="phoneView" destination="lbu-wP-nOb" id="0uY-bT-bQi"/>
+                <outlet property="scrollView" destination="7HC-xO-OYA" id="GfZ-O1-ep7"/>
                 <outlet property="shareLoView" destination="qCL-fn-1zF" id="2Nm-0A-UqG"/>
                 <outlet property="stackView" destination="Y44-mL-upr" id="Vas-c3-2qp"/>
                 <outlet property="tableview" destination="kjN-RS-7gp" id="NUC-Zt-LDA"/>
@@ -246,22 +247,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4S-Tt-lHM">
-                                                    <rect key="frame" x="14" y="34" width="366" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" name="AccentColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Pmg-Pf-DsB" secondAttribute="trailing" constant="14" id="G9e-ar-kdJ"/>
-                                                <constraint firstItem="d4S-Tt-lHM" firstAttribute="leading" secondItem="kPA-iK-rqD" secondAttribute="leading" constant="14" id="Kbs-u4-qiS"/>
                                                 <constraint firstItem="Pmg-Pf-DsB" firstAttribute="leading" secondItem="kPA-iK-rqD" secondAttribute="leading" constant="14" id="PmJ-Jk-Aoc"/>
-                                                <constraint firstItem="d4S-Tt-lHM" firstAttribute="top" secondItem="Pmg-Pf-DsB" secondAttribute="bottom" constant="8" id="eSH-87-5Gs"/>
                                                 <constraint firstItem="Pmg-Pf-DsB" firstAttribute="top" secondItem="kPA-iK-rqD" secondAttribute="top" constant="8" id="iTl-xv-ly9"/>
                                                 <constraint firstAttribute="height" constant="100" id="lNR-wu-z9c"/>
-                                                <constraint firstAttribute="trailing" secondItem="d4S-Tt-lHM" secondAttribute="trailing" constant="14" id="xEm-yV-OhX"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teg-57-Qv6">

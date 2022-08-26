@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     
     func fetchAllContacts() {
         let store = CNContactStore()
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactNicknameKey, CNContactFamilyNameKey, CNContactDepartmentNameKey, CNContactMiddleNameKey, CNContactNamePrefixKey, CNContactNameSuffixKey, CNContactEmailAddressesKey, CNContactJobTitleKey, CNContactBirthdayKey, CNContactUrlAddressesKey, CNContactBirthdayKey] as [CNKeyDescriptor]
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactNicknameKey, CNContactFamilyNameKey, CNContactMiddleNameKey, CNContactNamePrefixKey, CNContactNameSuffixKey, CNContactEmailAddressesKey, CNContactJobTitleKey, CNContactBirthdayKey, CNContactUrlAddressesKey, CNContactBirthdayKey] as [CNKeyDescriptor]
         
         let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
         
@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
                 for phoneNumber in contact.phoneNumbers {
                     if let number = phoneNumber.value as? CNPhoneNumber, let label = phoneNumber.label {
                         let localizedLabel = CNLabeledValue<CNPhoneNumber>.localizedString(forLabel: label)
-//                        print("\(contact.givenName) \(contact.familyName) tel:\(localizedLabel) -- \(number.stringValue), email: \(contact.emailAddresses)")
+
                         for mail in contact.emailAddresses {
                             model.emailAddress.value = mail.value as String
                             model.emailAddress.label = (mail.label)! as String 
@@ -71,6 +71,7 @@ class HomeViewController: UIViewController {
                         model.number.append(number.stringValue)
                     }
                 }
+
                 if let month = contact.birthday?.month, let date = contact.birthday?.day, let year = contact.birthday?.year {
                     var _month = ""
                     switch month {
@@ -102,8 +103,6 @@ class HomeViewController: UIViewController {
                     }
                     model.birthday += (_month + " " + String(date) + "," +  String(year))
                 }
-//                model.birthday.append(contact.birthday?.month)
-//                print(contact.birthday?.year)
                 print(type(of: contact.birthday?.month))
                 print(model.birthday)
                 self.models.append(model)
@@ -116,10 +115,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAllContacts()
-        let button = UIBarButtonItem(title: "ss", style: .plain, target: self, action: nil)
-        let button2 = UIBarButtonItem(title: "Groups", style: .done, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = button
-        self.navigationItem.leftBarButtonItem = button2
+        let grButton = UIBarButtonItem(title: "Groups", style: .done, target: self, action: nil)
+        self.navigationItem.leftBarButtonItem = grButton
         nameSectionTitles = [String](namesDic.keys)
         nameSectionTitles = nameSectionTitles.sorted(by: {$0 < $1})
         title = "Contacts"
@@ -138,6 +135,19 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: 0, y: 60)
+        UIView.animate(
+                    withDuration: 1,
+                    delay: 0.2 * Double(indexPath.row),
+                    usingSpringWithDamping: 0.4,
+                    initialSpringVelocity: 0.1,
+                    options: [.curveEaseInOut],
+                    animations: {
+                        cell.transform = CGAffineTransform(translationX: 0, y: 0)
+                })
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nameKey = nameSectionTitles[indexPath.section]
