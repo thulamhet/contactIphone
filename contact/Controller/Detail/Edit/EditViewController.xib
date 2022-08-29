@@ -11,8 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController" customModule="contact" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="Xdt-x1-D5O" id="zgr-tn-C1V"/>
-                <outlet property="headerView" destination="Qxw-cn-wSa" id="7EB-31-OIw"/>
-                <outlet property="imageview" destination="tJM-Ga-oVA" id="joa-XJ-i4n"/>
+                <outlet property="headerView" destination="Xdt-x1-D5O" id="zzk-xb-ZJO"/>
+                <outlet property="imageHeightConstraint" destination="rl0-Dw-5dW" id="LjX-IU-cUH"/>
+                <outlet property="imageWidthConstraint" destination="omt-db-utb" id="VCE-FA-RSP"/>
+                <outlet property="imageview" destination="KAS-kj-2Mb" id="15g-fl-iLj"/>
                 <outlet property="tableview" destination="CYO-qb-5e2" id="2j7-ZQ-7v4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,23 +33,28 @@
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxw-cn-wSa">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-x1-D5O">
                             <rect key="frame" x="18" y="42" width="68.5" height="31"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tJM-Ga-oVA">
-                            <rect key="frame" x="137" y="23" width="115" height="65"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAS-kj-2Mb">
+                            <rect key="frame" x="177" y="32" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="omt-db-utb"/>
+                                <constraint firstAttribute="height" constant="60" id="rl0-Dw-5dW"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="88" id="4hA-hZ-cJk"/>
+                        <constraint firstAttribute="height" constant="100" id="4hA-hZ-cJk"/>
                         <constraint firstItem="Xdt-x1-D5O" firstAttribute="top" secondItem="Qxw-cn-wSa" secondAttribute="top" constant="42" id="FGc-Kk-qDM"/>
                         <constraint firstItem="Xdt-x1-D5O" firstAttribute="leading" secondItem="Qxw-cn-wSa" secondAttribute="leading" constant="18" id="e0n-PQ-V4s"/>
+                        <constraint firstItem="KAS-kj-2Mb" firstAttribute="top" secondItem="Qxw-cn-wSa" secondAttribute="top" constant="32" id="q2a-rp-m2K"/>
+                        <constraint firstItem="KAS-kj-2Mb" firstAttribute="centerX" secondItem="Qxw-cn-wSa" secondAttribute="centerX" id="rhb-X9-Bn1"/>
                     </constraints>
                 </view>
             </subviews>
@@ -66,7 +73,6 @@
         </view>
     </objects>
     <resources>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

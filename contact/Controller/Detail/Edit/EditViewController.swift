@@ -8,12 +8,43 @@
 import UIKit
 
 class EditViewController: UIViewController {
+    
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var headerView: UIView!
-//    let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
-    
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    //    let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
+    func imageWith (name: String?) -> UIImage? {
+        let frame = CGRect(x: 173, y: 70, width: 100, height: 100)
+        let nameLabel = UILabel(frame: frame)
+        nameLabel.textAlignment = .center
+        nameLabel.backgroundColor = .systemGray
+        nameLabel.textColor = .white
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 36)
+        var initials = ""
+        if let initialsArray = name?.components(separatedBy: " ") {
+            if let firstWord = initialsArray.first {
+                if let firstLetter = firstWord.first {
+                    initials += String(firstLetter).capitalized }
+            }
+            if initialsArray.count > 1, let lastWord = initialsArray.last {
+                if let lastLetter = lastWord.first { initials += String(lastLetter).capitalized
+                }
+            }
+        } else {
+            return nil
+        }
+        nameLabel.text = initials
+        UIGraphicsBeginImageContext(imageview.frame.size)
+        if let currentContext = UIGraphicsGetCurrentContext() {
+            nameLabel.layer.render(in: currentContext)
+            let nameImage = UIGraphicsGetImageFromCurrentImageContext()
+            return nameImage
+        }
+        return nil
+    }
     let label = UILabel()
     var person = Person(id: "", name: "", contact: nil, tel:[], number: [], emailAddress: (nil, nil), birthday: "" )
     
@@ -28,11 +59,17 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("person: \(person)")
+        print("person: \(person.name)")
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableview.delegate = self
         tableview.dataSource = self
         tableview.tableHeaderView = headerView
+        print(imageview.frame.width)
+        let trimmed = person.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        imageview.image = imageWith(name: trimmed)
+        //no ko tron vi chua set width height co dinh cho no
+        imageview.layer.cornerRadius = (imageview.frame.width / 2)
+        imageview.clipsToBounds = true
         self.navigationController?.isNavigationBarHidden = true
     }
 }
@@ -55,24 +92,18 @@ extension EditViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected cell: \(names[indexPath.row])")
     }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//            label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-//            label.text = "Notification Times"
-//            label.font = .systemFont(ofSize: 16)
-//            label.textColor = .yellow
-//            label.backgroundColor = .red
-//            headerView.addSubview(label)
-//
-//            return headerView
-//        }
     
-        func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let y = 200 - (scrollView.contentOffset.y + 200)
-            let h = max(60, y)
-            let rect = CGRect(x: 5, y: 5, width: view.bounds.width, height: h)
-            imageview.frame = rect
-            print(label.frame)
-        }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset)
+        imageWidthConstraint.constant = imageWidthConstraint.constant + scrollView.contentOffset.x
+        imageHeightConstraint.constant = abs(60 - scrollView.contentOffset.y)
+        imageWidthConstraint.constant = imageHeightConstraint.constant
+        imageview.layer.cornerRadius = imageHeightConstraint.constant / 2
+        
+        imageview.layoutIfNeeded()
+//        print(label.frame)
+    }
 
 }
+
+
