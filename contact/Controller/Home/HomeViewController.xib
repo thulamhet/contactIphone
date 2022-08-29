@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" sectionIndexMinimumDisplayRowCount="2" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="nKg-hf-RlN">
-                    <rect key="frame" x="0.0" y="29" width="414" height="838"/>
+                    <rect key="frame" x="0.0" y="56" width="414" height="811"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6LX-fq-E8i"/>
@@ -30,7 +30,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-400.00000000000006" y="8.7053571428571423"/>
+            <point key="canvasLocation" x="-401.53846153846155" y="8.5308056872037916"/>
         </view>
     </objects>
     <resources>

@@ -118,7 +118,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAllContacts()
-        let grButton = UIBarButtonItem(title: "Groups", style: .done, target: self, action: nil)
+        let grButton = UIBarButtonItem(title: "Sort", style: .done, target: self, action: #selector(HomeViewController.didTapSort))
         self.navigationItem.leftBarButtonItem = grButton
         nameSectionTitles = [String](namesDic.keys)
         nameSectionTitles = nameSectionTitles.sorted(by: {$0 < $1})
@@ -223,6 +223,28 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             tableview.deleteRows(at: [indexPath], with: .fade)
             tableview.endUpdates()
 //            tableview.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let nameKey = nameSectionTitles[sourceIndexPath.section]
+        if var nameValue = namesDic[nameKey] {
+            // error index out of range
+            // xoa section
+            nameValue.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+            namesDic[nameKey] = nameValue
+        }
+    }
+    
+    @IBAction func didTapSort () {
+        if tableview.isEditing {
+            tableview.isEditing = false
+        } else {
+            tableview.isEditing = true
         }
     }
     
