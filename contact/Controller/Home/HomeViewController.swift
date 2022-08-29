@@ -111,6 +111,9 @@ class HomeViewController: UIViewController {
             print("Error!! : \(error)")
         }
     }
+    @IBAction func longPressCell () {
+        print("ekekekekeke")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +129,10 @@ class HomeViewController: UIViewController {
         let nib = UINib(nibName: "HomeCell", bundle: .main)
         self.navigationController?.navigationBar.prefersLargeTitles = true
         tableview.register(nib, forCellReuseIdentifier: "cell")
+        
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(HomeViewController.longPressCell))
+        tableview.addGestureRecognizer(longPress)
         
     }
     
@@ -198,6 +205,25 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return nameSectionTitles
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let nameKey = nameSectionTitles[indexPath.section]
+     
+        if editingStyle == .delete {
+            tableview.beginUpdates()
+            if var nameValue = namesDic[nameKey] {
+                nameValue.remove(at: indexPath.row)
+                namesDic[nameKey] = nameValue
+            }
+            tableview.deleteRows(at: [indexPath], with: .fade)
+            tableview.endUpdates()
+//            tableview.reloadData()
+        }
     }
     
 }

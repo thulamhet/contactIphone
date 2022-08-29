@@ -94,14 +94,11 @@ extension EditViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset)
         imageWidthConstraint.constant = imageWidthConstraint.constant + scrollView.contentOffset.x
-        imageHeightConstraint.constant = abs(60 - scrollView.contentOffset.y)
+        imageHeightConstraint.constant = 1 - scrollView.contentOffset.y > 48 ? 1 - scrollView.contentOffset.y : 48
         imageWidthConstraint.constant = imageHeightConstraint.constant
         imageview.layer.cornerRadius = imageHeightConstraint.constant / 2
-        
         imageview.layoutIfNeeded()
-//        print(label.frame)
     }
 
 }
